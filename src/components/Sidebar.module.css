@@ -30,14 +30,6 @@
   line-height: 1.65;
 }
 
-.avatar {
-  width: calc(3rem + 12px);
-  height: calc(3rem + 12px);
-  border-radius: 100%;
-  border: 4px solic var(--gray-800);
-  outline: 2px solid var(--green-500);
-}
-
 .sidebar footer {
   border-top: 1px solid var(--gray-600);
   margin-top: 1.5rem;
