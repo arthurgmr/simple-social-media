@@ -5,4 +5,4 @@
 
 ## 🗒 About the project <a name="-about-the-project" style="text-decoration:none"></a>
 
-This project has been converted to typescript, [access the new repository](https://www.linkedin.com/in/arthurgmachado/).
+This project has been converted to typescript, [access the new repository](https://github.com/arthurgmr/feed-social-ts).
