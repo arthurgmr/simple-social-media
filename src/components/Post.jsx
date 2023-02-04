@@ -18,9 +18,7 @@ export function Post({author, publishedAt, content}) {
     addSuffix: true
   })
 
-  const [comments, setComments] = useState([
-    'Congrats! Your project is amazing!'
-  ]);
+  const [comments, setComments] = useState([]);
 
   const [newCommentText, setNewCommentText] = useState('');
 
@@ -33,7 +31,14 @@ export function Post({author, publishedAt, content}) {
   }
 
   function handleNewCommentChange() {
+    // use to handleCommentInvalid function has correct behavior;
+    event.target.setCustomValidity('');
+    
     setNewCommentText(event.target.value);
+  }
+
+  function handleCommentInvalid() {
+    event.target.setCustomValidity('This field needs has value!')
   }
 
   function deleteComment(commentToDelete) {
@@ -43,6 +48,8 @@ export function Post({author, publishedAt, content}) {
 
     setComments(commentsWithoutDeleteOne);
   }
+
+  const isNewCommentEmpty = newCommentText.length == 0;
 
   return (
     <article className={styles.post}>
@@ -78,9 +85,11 @@ export function Post({author, publishedAt, content}) {
           placeholder='Leave a comment'
           value={newCommentText}
           onChange={handleNewCommentChange}
+          onInvalid={handleCommentInvalid}
+          required
         />
         <footer>
-          <button type='submit'>Post</button>
+          <button type='submit' disabled={isNewCommentEmpty}>Post</button>
         </footer>
       </form>
 
